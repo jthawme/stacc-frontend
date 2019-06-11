@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Stacc</title>
-    <meta name="description" content="">
+    <meta name="description" content="An application to create high quality Gifs from videos easily. For when you just need a Gif.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/styles.scss">
   </head>
@@ -18,7 +18,7 @@
 
       <nav>
         <ul role="list">
-          <li><a class="download" href="/#download">Download</a></li>
+          <li><a class="download" href="https://github.com/creativetechnologylab/web-kiosk/releases">Download</a></li>
           <li><a href="/#about">About</a></li>
           <li><a href="/#privacy">Privacy</a></li>
         </ul>
@@ -38,14 +38,25 @@
 
       <div class="screens">
         <img src="images/screens/01.jpg"/>
+
+        <div class="overlay">
+          <a href="https://github.com/creativetechnologylab/web-kiosk/releases">Download</a>
+          <span>Mac OS – June 2019</span>
+        </div>
       </div>
+
+      <div class="gifs"></div>
     </section>
 
     <section id="about">
       <div class="about-content">
         <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144">
-            <path fill="currentColor" d="M70 2v68H2V2h68m2-2H0v72h72V0zM72 72h72v72H72z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+            <path d="M70 2v68H2V2h68m2-2H0v72h72V0z"/>
+            <path d="M36 9.83L62.17 36 36 62.17 9.83 36 36 9.83M36 7L7 36l29 29 29-29L36 7z"/>
+            <path d="M45 27v18H27V27h18m2-2H25v22h22V25z"/>
+            <path d="M49.96 2.73l19.31 47.22-47.23 19.32L2.73 22.04 49.96 2.73m1.09-2.6L.13 20.95l20.82 50.93 50.93-20.82L51.05.13z"/>
+            <path d="M28.77 18.33l24.9 10.45-10.45 24.9-24.9-10.45 10.45-24.9m-1.07-2.62L15.71 44.3 44.3 56.29 56.29 27.7 27.7 15.71z"/>
           </svg>
         </div>
         <p>
@@ -54,11 +65,11 @@
       </div>
       <div class="about-content">
         <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144">
-              <path fill="currentColor" d="M142 2v68H74V2h68m2-2H72v72h72V0z"/>
-              <path fill="currentColor" d="M106 38v68H38V38h68m2-2H36v72h72V36z"/>
-              <path fill="currentColor" d="M0 72h72v72H0z"/>
-            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+            <path d="M70 2v32H38V2h32m2-2H36v36h36V0z"/>
+            <path d="M52 20v32H20V20h32m2-2H18v36h36V18z"/>
+            <path d="M0 36h36v36H0z"/>
+          </svg>
         </div>
         <p>
           Export as Gif or Video, can be used as a rapid trimming&nbsp;application
@@ -66,10 +77,8 @@
       </div>
       <div class="about-content">
         <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 173.91 101.82">
-            <path fill="currentColor" d="M70 16.91v68H2v-68h68m2-2H0v72h72v-72z"/>
-            <path fill="currentColor" d="M53.37 6.58l62.96 25.7-25.7 62.96-62.96-25.7 25.7-62.96m-1.1-2.6l-27.2 66.66 66.66 27.21 27.21-66.66L52.27 3.98z"/>
-            <path transform="rotate(-45.001 123 50.913)" fill="currentColor" d="M87 14.91h72v72H87z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+            <path d="M34 2v18h18v18h18v32H2V2h32m2-2H0v72h72V36H54V18H36V0z"/>
           </svg>
         </div>
         <p>

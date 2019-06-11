@@ -1,0 +1,51 @@
+footer {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+
+  padding: #{ $padding } 5% #{ $padding * 2 };
+
+  border-top: 1px solid $light;
+  color: $light;
+
+  h2,
+  p {
+    margin: 0;
+    font-size: $small-type;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: #{ $padding } 10% #{ $padding * 2 };
+
+    flex-wrap: none;
+  }
+}
+
+.privacy {
+  p {
+    max-width: 400px;
+  }
+}
+
+.attribution {
+  flex: 0 0 100%;
+
+  margin-top: $padding;
+
+  text-align: left;
+
+  a {
+    color: $accent;
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex: 0 0 30%;
+
+    margin-top: 0;
+
+    text-align: right;
+  }
+}

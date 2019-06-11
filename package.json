@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +15,7 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "parcel-bundler": "^1.12.3",
     "sass": "^1.21.0"
   }
 }

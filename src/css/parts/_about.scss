@@ -1,0 +1,38 @@
+#about {
+  padding: #{$padding * 3} 15%;
+}
+
+.about-content {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin: #{$padding * 3} 0;
+
+  p {
+    flex: 0 0 85%;
+
+    font-size: $big-type;
+
+    color: $accent;
+
+    margin: 0;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  &:nth-child(2n) {
+    flex-direction: row-reverse;
+
+    text-align: right;
+  }
+
+  .icon {
+    flex: 0 0 140px;
+
+    color: $accent;
+  }
+}
