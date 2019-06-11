@@ -173,16 +173,18 @@ if (navigator.share) {
 }
 
 const getLatestBinary = () => {
-  fetch('https://api.github.com/repos/creativetechnologylab/web-kiosk/releases/latest')
+  fetch('https://api.github.com/repos/jthawme/stacc/releases/latest')
     .then(resp => resp.json())
     .then(json => {
       const downloadBinary = json.assets[0].browser_download_url;
       const downloadDate = json.assets[0].updated_at;
+      const downloadTag = json.tag_name;
 
       const overlayBtn = document.querySelector('.overlay a');
       const overlaySpan = document.querySelector('.overlay span');
 
       overlayBtn.href = downloadBinary;
+      overlayBtn.innerText = `Download ${downloadTag}`;
       overlaySpan.innerText = `Mac OS – ${ getDate(downloadDate) }`;
 
       if (!navigator.share) {
