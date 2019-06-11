@@ -5,7 +5,11 @@
   align-items: center;
   justify-content: flex-end;
 
-  height: calc(100vh + 50px);
+  height: 100vh;
+
+  @media screen and (min-width: 768px) {
+    height: calc(100vh + 50px);
+  }
 }
 
 .title {
@@ -36,7 +40,7 @@
 .screens {
   width: 80%;
 
-  margin-bottom: 15vh;
+  margin-bottom: 10vh;
 
   overflow: hidden;
 

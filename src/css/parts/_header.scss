@@ -1,64 +1,72 @@
 header {
-    position: absolute;
-  
-    top: 0;
-    left: 0;
-  
-    width: 100%;
-  
+  position: absolute;
+
+  z-index: 20;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: $padding;
+
+  justify-content: space-between;
+}
+
+.logo {
+  color: $accent;
+
+  width: 67.5px;
+  height: 36px;
+
+  svg {
+    fill: currentColor;
+  }
+}
+
+nav {
+  ul {
     display: flex;
-  
-    align-items: center;
-  
-    padding: $padding;
-  
-    justify-content: space-between;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
   }
-  
-  .logo {
+
+  li {
+    margin-left: $padding * 0.75;
+  }
+
+  a {
+    text-decoration: none;
+
+    color: $primary;
+
+    font-weight: normal;
+
+    padding: 3px 0;
+
+    &:hover,
+    &:focus {
+      outline: 0;
+
+      border-bottom: 2px solid currentColor;
+    }
+  }
+
+  .download {
     color: $accent;
-  
-    width: 67.5px;
-    height: 36px;
-  
-    svg {
-      fill: currentColor;    
-    }
+    font-weight: bold;
   }
-  
-  nav {
-    ul {
-      display: flex;
-  
-      padding: 0;
-      margin: 0;
-  
-      list-style: none;
-    }
-  
+
+  @media screen and (min-width: 480px) {
     li {
       margin-left: $padding * 1.5;
     }
-  
-    a {
-      text-decoration: none;
-  
-      color: $primary;
-  
-      font-weight: normal;
-  
-      padding: 3px 0;
-  
-      &:hover,
-      &:focus {
-        outline: 0;
-  
-        border-bottom: 2px solid currentColor;
-      }
-    }
-  
-    .download {
-      color: $accent;
-      font-weight: bold;
-    }
   }
+}
