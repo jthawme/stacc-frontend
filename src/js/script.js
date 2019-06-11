@@ -161,6 +161,7 @@ const downloadBtn = document.querySelector('.download');
 if (navigator.share) {
   downloadBtn.innerText = 'Share';
   downloadBtn.addEventListener('click', e => {
+    e.preventDefault();
     navigator.share({
         title: document.title,
         text: document.querySelector('meta[name=description]').content,
