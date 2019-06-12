@@ -5,10 +5,10 @@
   align-items: center;
   justify-content: flex-end;
 
-  height: 100vh;
+  min-height: 100vh;
 
   @media screen and (min-width: 768px) {
-    height: calc(100vh + 50px);
+    min-height: calc(100vh + 50px);
   }
 }
 
@@ -31,8 +31,12 @@
     color: $accent;
     font-size: $xlarge-type;
 
+    padding: 12px 0;
+
     &:last-of-type {
       font-size: $xxlarge-type;
+
+      padding: 0;
     }
   }
 }
@@ -54,10 +58,14 @@
   }
 
   @media screen and (min-width: 768px) {
-    width: 60%;
+    width: 50%;
     max-width: 800px;
 
     margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 65%;
   }
 }
 
