@@ -45,40 +45,6 @@ const titleIncrement = (end = () => {}) => {
 titleIncrement();
 framer(titleIncrement, 500);
 
-// // =========
-// //
-// // SCREENS SECTION
-// //
-// // =========
-// const screensImg = document.querySelector('.screens img');
-// let screenIndex = 0;
-
-// const screenImages = [
-//   require('../images/screens/01.jpg'),
-//   require('../images/screens/02.jpg'),
-//   require('../images/screens/03.jpg'),
-//   require('../images/screens/04.jpg'),
-// ];
-
-// const screenIncrement = (end = () => {}) => {
-//   screensImg.src = screenImages[screenIndex];
-
-//   screenIndex++;
-
-//   if (screenIndex >= screenImages.length) {
-//     screenIndex = 0;
-//   }
-
-//   end();
-// };
-
-// Promise.all(screenImages.map(downloader))
-//   .then(images => {
-//     screenIncrement();
-//     framer(screenIncrement, 1500);
-//   });
-
-
 
 // =========
 //
@@ -111,16 +77,38 @@ const gifs = shuffle([
   'https://media.giphy.com/media/3ohs7MXRRtMcKI99K0/200w_d.gif',
   'https://media.giphy.com/media/2rBUTRvX3FCHS/200w_d.gif',
   'https://media.giphy.com/media/nBWhJwDW3sWyc/200w_d.gif',
+  'https://media.giphy.com/media/l41Yh1olOKd1Tgbw4/200w_d.gif',
+  'https://media.giphy.com/media/l3fQsAQUKggBos9IQ/200w_d.gif',
+  'https://media.giphy.com/media/IhgPvZQWuhuDpKOmhB/200w_d.gif',
+  'https://media.giphy.com/media/xTiTnw6Yg5nzWwQh5C/200w_d.gif',
+  'https://media.giphy.com/media/gg4VHcTCsey8U/200w_d.gif',
+  'https://media.giphy.com/media/xT8qBijzKv3vzx9Kvu/200w_d.gif',
+  'https://media.giphy.com/media/3o6nUQgYhSBUAXBOQo/200w_d.gif',
 ]);
 let gifAmount = 0;
+
+let sides = {0: [], 1: []};
+
+function getTop(side) {
+  let top = Math.round(random(0, 8)) * 10;
+
+  if (sides[side].indexOf(top) >= 0) {
+    return getTop(side);
+  } else {
+    sides[side].push(top);
+    return top;
+  }
+}
 
 function addGif(gif) {
   const el = new Image();
   el.src = gif;
 
+  let side = gifAmount % 2;
+
   let width = random(1, 3);
-  let top = random(0, 90);
-  let left = gifAmount % 2 ? random(-10, 25 - width) : random(75, 110 - width);
+  let top = getTop(side);
+  let left = side ? random(-10, 25 - width) : random(75, 110 - width);
 
   if (left > 25 && left < 75) {
     addGif(gif);

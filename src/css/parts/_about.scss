@@ -4,10 +4,10 @@
   flex-wrap: wrap;
   align-items: flex-start;
 
-  padding: #{$padding * 3} 10%;
+  padding: #{$padding * 3} 10% 0;
 
   @media screen and (min-width: 950px) {
-    padding: #{$padding * 5} 15%;
+    padding: #{$padding * 5} 15% 0;
   }
 }
 
