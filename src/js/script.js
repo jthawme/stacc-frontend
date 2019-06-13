@@ -11,6 +11,14 @@ const framer = (cb, time) => {
     }, time);
 };
 
+const downloader = (src) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve({ img, src });
+    img.src = src;
+  });
+};
+
 
 // =========
 //
@@ -37,46 +45,38 @@ const titleIncrement = (end = () => {}) => {
 titleIncrement();
 framer(titleIncrement, 500);
 
-// =========
-//
-// SCREENS SECTION
-//
-// =========
-const screensImg = document.querySelector('.screens img');
-let screenIndex = 0;
+// // =========
+// //
+// // SCREENS SECTION
+// //
+// // =========
+// const screensImg = document.querySelector('.screens img');
+// let screenIndex = 0;
 
-const screenImages = [
-  require('../images/screens/01.jpg'),
-  require('../images/screens/02.jpg'),
-  require('../images/screens/03.jpg'),
-  require('../images/screens/04.jpg'),
-];
+// const screenImages = [
+//   require('../images/screens/01.jpg'),
+//   require('../images/screens/02.jpg'),
+//   require('../images/screens/03.jpg'),
+//   require('../images/screens/04.jpg'),
+// ];
 
-const downloader = (src) => {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve({ img, src });
-    img.src = src;
-  });
-};
+// const screenIncrement = (end = () => {}) => {
+//   screensImg.src = screenImages[screenIndex];
 
-const screenIncrement = (end = () => {}) => {
-  screensImg.src = screenImages[screenIndex];
+//   screenIndex++;
 
-  screenIndex++;
+//   if (screenIndex >= screenImages.length) {
+//     screenIndex = 0;
+//   }
 
-  if (screenIndex >= screenImages.length) {
-    screenIndex = 0;
-  }
+//   end();
+// };
 
-  end();
-};
-
-Promise.all(screenImages.map(downloader))
-  .then(images => {
-    screenIncrement();
-    framer(screenIncrement, 1500);
-  });
+// Promise.all(screenImages.map(downloader))
+//   .then(images => {
+//     screenIncrement();
+//     framer(screenIncrement, 1500);
+//   });
 
 
 
