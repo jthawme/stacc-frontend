@@ -192,3 +192,23 @@ const getDate = (d) => {
 }
 
 getLatestBinary();
+
+
+
+
+// =========
+//
+// PRODUCTHUNT SECTION
+//
+// =========
+
+function checkProductHunt() {
+  const d = new Date();
+  const today = `${d.getUTCDate()}-${d.getUTCMonth()}-${d.getUTCFullYear()}`;
+
+  if (window.location.search.includes('producthunt') || today == '25-5-2019') {
+    document.body.classList.add('producthunt');
+  }
+}
+
+checkProductHunt();

@@ -21,6 +21,10 @@ footer {
 
     flex-wrap: none;
   }
+
+  .producthunt & {
+    padding-bottom: #{ $padding * 4};
+  }
 }
 
 .privacy {
