@@ -178,7 +178,14 @@ const getLatestBinary = () => {
       if (!navigator.share) {
         downloadBtn.href = downloadBinary;
       }
-    });
+
+      return {
+        tag: downloadTag,
+        date: getDate(downloadDate),
+        download: downloadBinary
+      };
+    })
+    .then(tag => checkForUpdates(tag));
 }
 
 const getDate = (d) => {
@@ -192,6 +199,89 @@ const getDate = (d) => {
 }
 
 getLatestBinary();
+
+
+
+
+// =========
+//
+// UPDATES SECTION
+//
+// =========
+
+function tokenize(search) {
+  let str = search.substring(1);
+  let parts = str.split('&').map(v => v.split('='));
+  let tokens = {};
+
+  parts.forEach(p => tokens[p[0]] = p[1]);
+
+  return tokens;
+}
+
+function checkForUpdates({ tag, date, download }) {
+  if (window.location.search.includes('updates')) {
+    const current = `v${tokenize(window.location.search).updates}`;
+
+    if (current != tag) {
+      showUpdateModal(tag, download);
+    }
+  }
+}
+
+function createEl(tag, classes = [], events = {}) {
+  const el = document.createElement(tag);
+  el.classList.add(...classes);
+
+  Object.keys(events).forEach(k => {
+    el.addEventListener(k, events[k], false);
+  });
+
+  return el;
+}
+
+function showUpdateModal(tag, download) {
+  const p1 = createEl('p');
+  const p2 = createEl('p');
+
+  p1.innerText = `Update ${ tag } available`;
+
+  const alink = createEl('a', ['update-overlay__btn', 'downloader'], {
+    click: () => hideModal()
+  });
+
+  alink.href = download;
+  alink.download = true;
+  alink.innerText = 'Download';
+
+  const content = createEl('div', ['update-overlay__content']);
+
+  const wrapper = createEl('div', ['update-overlay'], {
+    click: e => {
+      if (e.target !== content && !content.contains(e.target)) {
+        hideModal();
+      }
+    }
+  });
+
+  setTimeout(() => {
+    wrapper.classList.add('show');
+  }, 150);
+
+  p2.appendChild(alink);
+  content.appendChild(p1);
+  content.appendChild(p2);
+  wrapper.appendChild(content);
+  document.body.appendChild(wrapper);
+}
+
+function hideModal() {
+  const el = document.querySelector('.update-overlay');
+
+  if (el) {
+    el.classList.remove('show');
+  }
+}
 
 
 
@@ -212,3 +302,5 @@ function checkProductHunt() {
 }
 
 checkProductHunt();
+
+

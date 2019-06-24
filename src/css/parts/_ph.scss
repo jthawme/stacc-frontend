@@ -1,0 +1,45 @@
+#producthunt {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  color: white;
+
+  font-size: $normal-type;
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 10;
+
+  background-color: $accent;
+  line-height: 1;
+
+  padding: $padding / 2;
+
+  img {
+    display: none;
+
+    margin-left: $padding / 2;
+  }
+
+  @media screen and (min-width: 560px) {
+    img {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: $big-type;
+  }
+
+  .producthunt & {
+    display: flex;
+  }
+}
