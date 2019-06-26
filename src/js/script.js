@@ -296,7 +296,7 @@ function checkProductHunt() {
   const d = new Date();
   const today = `${d.getUTCDate()}-${d.getUTCMonth()}-${d.getUTCFullYear()}`;
 
-  if (window.location.search.includes('producthunt') || today == '25-5-2019') {
+  if (window.location.search.includes('producthunt') || today == '26-5-2019') {
     document.body.classList.add('producthunt');
   }
 }
